@@ -1,0 +1,25 @@
+#
+# Onedrive ubuntu client running inside docker container
+#
+# docker-compose build
+
+
+onedrivedata:
+  # Note you cannot scale if you use conteiner_name
+  container_name: onedrive_data
+  build: .
+  dockerfile: Dockerfile
+  hostname: onedrive
+  environment:
+    - APP_CLIENT_ID=0000000040172910
+    - APP_CLIENT_SECRET=WAltBcwM9B3nlGDmplOUGfPLqsw5bHDA
+    - LOGNAME=onedrive
+    - USER=onedrive
+    - SUDO_USER=root
+    - LC_ALL=C.UTF-8
+    - LANG=C.UTF-8
+  volumes:
+    - ./onedrive:~/.onedrive
+    - ./data:/root/OneDrive/
+    - ./logs:/var/log/
+
