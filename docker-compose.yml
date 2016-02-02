@@ -19,7 +19,7 @@ onedrivedata:
     - LC_ALL=C.UTF-8
     - LANG=C.UTF-8
   volumes:
-    - ./onedrive:~/.onedrive
+    - ./onedrive:/root/.onedrive
     - ./data:/root/OneDrive/
     - ./logs:/var/log/
 
